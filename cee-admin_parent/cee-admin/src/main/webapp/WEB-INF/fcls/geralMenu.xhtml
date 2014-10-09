@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+	<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html" xmlns:f="http://java.sun.com/jsf/core" xmlns:plcf="http://www.powerlogic.com.br/plcf">
+		<ul>
+			<li>
+				<a>
+					<span class="ico iLeiautepadrao"/>
+					<label jsfc="plcf:titulo" tituloChave="app.m.inicial">Principal</label>
+				</a>
+				<ul class="ui-state-hover">
+					<li>
+						<a href="#{request.contextPath}/f/n/uf">
+							<label jsfc="plcf:titulo" tituloChave="menu.uf.titulo">Unidade da Federação</label>
+						</a>
+					</li>
+					<!-- li>
+					<a href="#{request.contextPath}/f/n/cidadeUfsmd?fwPlc=cidadeUf">
+						<label jsfc="plcf:titulo" tituloChave="menu.cidadeUf.titulo">Cidades do Estado</label>
+					</a>
+				</li-->
+				<li>
+					<a href="#{request.contextPath}/f/n/papel">
+						<label jsfc="plcf:titulo" tituloChave="menu.papel.titulo">Papel</label>
+					</a>
+				</li>
+				<li>
+					<a href="#{request.contextPath}/f/n/pessoasel?evento=y">
+						<label jsfc="plcf:titulo" tituloChave="menu.pessoa.titulo">Pessoa</label>
+					</a>
+				</li>
+				<li>
+					<a href="#{request.contextPath}/f/n/usuariosel?evento=y">
+						<label jsfc="plcf:titulo" tituloChave="menu.usuario.titulo">Usuário</label>
+					</a>
+				</li>
+			</ul>
+		</li>
+		<ui:include src="/WEB-INF/fcls-plc/geralMenuAjuda.xhtml"/>
+		<ui:include src="/WEB-INF/fcls-plc/geralMenuPrefLang.xhtml"/>
+		<ui:include src="/WEB-INF/fcls-plc/geralMenuAreaTecnica.xhtml"/>
+		<ui:include src="/WEB-INF/fcls-plc/geralMenuDinamico.xhtml"/>
+		<ui:include src="/WEB-INF/fcls-plc/geralMenuThemeSwitcher.xhtml"/>
+	</ul>
+</ui:composition>
