@@ -11,7 +11,6 @@ import java.util.Map;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.cee.admin.commons.AppUserProfileVO;
 import com.powerlogic.jcompany.commons.PlcBaseUserProfileVO;
 import com.powerlogic.jcompany.commons.config.qualifiers.QPlcDefault;
 import com.powerlogic.jcompany.commons.config.stereotypes.SPlcUtil;
@@ -39,7 +38,7 @@ public class AppUserProfileUtil extends PlcBaseUserProfileUtil {
 		// Importante transformar o valor de String para Object
 		Map<String,Object> m = new HashMap<String,Object>();
 
-		AppUserProfileVO appUsuarioPerfilVO = (AppUserProfileVO) plcPerfilVO;
+		PlcBaseUserProfileVO appUsuarioPerfilVO = (PlcBaseUserProfileVO) plcPerfilVO;
 
 		// Deve estar ao final da montagem do Map
 		appUsuarioPerfilVO.getPlcVerticalSecurity().putAll(m);
