@@ -8,7 +8,9 @@
 @PlcConfigApplication(
 	definition=@PlcConfigApplicationDefinition(name="Administração",acronym="Admin",version=1,release=0),
 	classesDiscreteDomain={com.cee.admin.entity.Sexo.class},
-	classesLookup={com.cee.admin.entity.PapelEntity.class,com.cee.admin.entity.UfEntity.class,com.cee.admin.entity.CidadeEntity.class}
+	classesLookup={com.cee.admin.entity.PapelEntity.class,
+		com.cee.admin.entity.UfEntity.class,
+		com.cee.admin.entity.CidadeEntity.class}
 )
 
 
