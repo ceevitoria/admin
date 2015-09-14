@@ -36,11 +36,13 @@
 							</plcf:celula>  
 							<plcf:celula> 
 								<plcf:titulo value="#{msg['label.endereco.uf']}"/>  
-								<plcf:comboDinamico id="endereco_uf" value="#{pessoa.endereco.uf}" dominio="UfEntity" exibeBranco="S" ajudaChave="ajuda.endereco.uf"/> 
+								<plcf:comboDinamico id="endereco_uf" value="#{pessoa.endereco.uf}" navegacaoParaCampos="endereco.cidade" dominio="UfEntity" exibeBranco="S" ajudaChave="ajuda.endereco.uf">
+									<f:ajax event="valueChange" render="endereco_cidade" onerror="plc.manipulaErroAjax"/> 
+								</plcf:comboDinamico>
 							</plcf:celula>  
 							<plcf:celula> 
 								<plcf:titulo value="#{msg['label.endereco.cidade']}"/>  
-								<plcf:comboDinamico id="endereco_cidade" value="#{pessoa.endereco.cidade}" dominio="CidadeEntity" exibeBranco="S" ajudaChave="ajuda.endereco.cidade"/> 
+								<plcf:comboDinamico id="endereco_cidade" value="#{pessoa.endereco.cidade}" comboAninhado="S"  dominio="CidadeEntity" exibeBranco="S" skipCacheControl="true" ajudaChave="ajuda.endereco.cidade"/>
 							</plcf:celula> 
 						</plcf:linha> 
 					</plcf:tabela> 
@@ -58,7 +60,7 @@
 				colNames: [
 					//'#{msg['label.id']}',
 					'#{msg['label.nome']}',
-					//'#{msg['label.cpf']}',
+					'#{msg['label.cpf']}',
 					'#{msg['label.endereco.logradouro']}',
 					'#{msg['label.endereco.bairro']}',
 					'#{msg['label.endereco.uf']}',
@@ -66,11 +68,11 @@
 				colModel:[
 					//{name:'id',index:'id'},
 					{name:'nome',index:'nome'},
-					//{name:'cpf',index:'cpf'},
+					{name:'cpf',index:'cpf', width:'50', align:'center'},
 					{name:'endereco.logradouro',index:'endereco.logradouro'},
-					{name:'endereco.bairro',index:'endereco.bairro'},
-					{name:'endereco.uf',index:'endereco.uf'},
-					{name:'endereco.cidade',index:'endereco.cidade'}]},
+					{name:'endereco.bairro',index:'endereco.bairro', width:'90'},
+					{name:'endereco.uf',index:'endereco.uf', width:'50', align:'center'},
+					{name:'endereco.cidade',index:'endereco.cidade', width:'90'}]},
 			urlEdicao:'#{request.contextPath}/f/n/pessoaman'});});//]]> </script>  
 					<table id="plc-grid" width="100%" class="scroll" cellpadding="0" cellspacing="0"/>  
 					<div id="plc-grid-navegador" class="scroll" style="text-align:center;"/> 

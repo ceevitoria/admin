@@ -39,7 +39,6 @@ public abstract class Pessoa extends AppBaseEntity {
 	@PlcValCpf
 	private String cpf;
 
-	@NotNull
 	@Enumerated(EnumType.STRING)
 	private Sexo sexo;
 	
