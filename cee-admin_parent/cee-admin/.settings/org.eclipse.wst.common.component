@@ -4,6 +4,12 @@
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/java"/>
         <wb-resource deploy-path="/" source-path="/target/m2e-wtp/web-resources"/>
         <wb-resource deploy-path="/" source-path="/src/main/webapp" tag="defaultRootSource"/>
+        <dependent-module archiveName="jcompany_commons-6.1.9.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/jcompany_commons/jcompany_commons">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="jcompany_controller-6.1.9.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/jcompany_controller/jcompany_controller">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
         <dependent-module archiveName="cee-admin_model-1.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/cee-admin_model/cee-admin_model">
             <dependency-type>uses</dependency-type>
         </dependent-module>
