@@ -6,15 +6,12 @@ import java.io.Serializable;
 
 import javax.persistence.MappedSuperclass;
 
-import com.powerlogic.jcompany.commons.annotation.PlcDbFactory;
 import com.powerlogic.jcompany.domain.PlcBaseMapEntity;
 /**
  * @since jCompany 3.2 Ancestral para todas as classes da aplicação, 
  * com pre-mapeamentos para OID, versao e auditoria minima herdados.
  */
 @MappedSuperclass
-@PlcDbFactory(nome="GLOBAL", autoDetectDialect=true)
 public abstract class AppBaseEntity extends PlcBaseMapEntity implements Serializable {
-
-	private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = -3597081760247695404L;
 }
