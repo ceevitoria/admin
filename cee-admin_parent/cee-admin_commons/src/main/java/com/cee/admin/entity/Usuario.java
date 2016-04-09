@@ -22,14 +22,7 @@ import javax.persistence.CascadeType;
 
 @MappedSuperclass
 public abstract class Usuario extends AppBaseEntity {
-
-	
-	@OneToMany (targetEntity = com.cee.admin.entity.PapelUsuarioEntity.class, fetch = FetchType.LAZY, cascade=CascadeType.ALL, mappedBy="usuario")
-	@ForeignKey(name="FK_PAPELUSUARIO_USUARIO")
-	@PlcValDuplicity(property="nomePapel")
-	@PlcValMultiplicity(referenceProperty="nomePapel",  message="{jcompany.aplicacao.mestredetalhe.multiplicidade.PapelUsuarioEntity}")
-	@Valid
-	private List<PapelUsuario> papelUsuario;
+	private static final long serialVersionUID = 4070312378257037283L;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO, generator = "SE_USUARIO")
@@ -51,6 +44,13 @@ public abstract class Usuario extends AppBaseEntity {
 	@RequiredIf(valueOf = "nomeUsuario", is = RequiredIfType.not_empty)
 	@Size(max = 50)
 	private String senhaUsuario;
+
+	@OneToMany (targetEntity = com.cee.admin.entity.PapelUsuarioEntity.class, fetch = FetchType.LAZY, cascade=CascadeType.ALL, mappedBy="usuario")
+	@ForeignKey(name="FK_PAPELUSUARIO_USUARIO")
+	@PlcValDuplicity(property="nomePapel")
+	@PlcValMultiplicity(referenceProperty="nomePapel",  message="{jcompany.aplicacao.mestredetalhe.multiplicidade.PapelUsuarioEntity}")
+	@Valid
+	private List<PapelUsuario> papelUsuario;
 
 	public Long getId() {
 		return id;
